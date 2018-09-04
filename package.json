@@ -1,0 +1,14 @@
+{
+  "name": "artillery",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "artillery": "^1.6.0-23",
+    "faker": "^4.1.0"
+  },
+  "scripts": {
+    "emit-test": "./node_modules/artillery/bin/artillery run ./emit-test.yml",
+    "connect-test": "./node_modules/artillery/bin/artillery run ./connect-test.yml"
+  }
+}

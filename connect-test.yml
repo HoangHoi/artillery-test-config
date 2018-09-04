@@ -1,0 +1,18 @@
+config:
+  target: "http://127.0.0.1:1313"
+  phases:
+    - duration: 3600
+      arrivalRate: 10
+  processor: "./processor.js"
+scenarios:
+  - engine: "socketio"
+    flow:
+      - function: "generateRandomData"
+      - get:
+          url: "/"
+      - emit:
+          channel: "add_user"
+          data: "{{ name }}"
+          response:
+            channel: "login"
+      - think: 60
